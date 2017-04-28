@@ -1,0 +1,74 @@
+﻿/*create table kh
+(
+ mak char(2) primary key,
+ ten varchar(5),
+ dt varchar(3),
+ cq varchar(5)
+);
+create table nct
+(
+ man char(2) primary key,
+ dc varchar(30),
+ g int,
+ tencn varchar(30) 
+);
+create table hd
+(
+ mak char(2),
+ man char(2),
+ bd date,
+ kt date,
+ primary key(mak,man),
+ foreign key(mak) references kh(mak),
+ foreign key(man) references nct(man)
+);
+--b
+select mak, ten, cq
+from kh natural join hd natural join nct
+where tencn = 'bb15';
+
+select *
+from nct
+where man not in (select man from hd);
+
+
+select max(g)
+from hd natural join nct;
+
+create table ks
+(
+ maks char(2) primary key,
+ tenks varchar(30),
+ dc varchar(30) 
+);
+create table room
+(
+ sop int primary key ,
+ maks char(2),
+ loai varchar(30),
+ g int
+ 
+);
+create table khach
+(
+ 
+ makh char(2) primary key,
+ hoten varchar(30),
+ dchi varchar(30)
+ 
+);
+create table dp
+(
+maks char(2),
+makh char(2),
+nn date,
+nt date,
+sop  int,
+
+ primary key(maks,makh,nn),
+ foreign key(maks) references ks(maks),
+ foreign key(makh) references khach(makh),
+ foreign key(sop) references room(sop)
+);
+*/
+
